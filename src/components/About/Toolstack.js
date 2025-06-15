@@ -6,26 +6,30 @@ import {
   SiSlack,
   SiVercel,
   SiMacos,
+  SiThreedotjs,
+  SiGithub,
+  SiFigma
 } from "react-icons/si";
 
 function Toolstack() {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
       <Col xs={4} md={2} className="tech-icons">
-        <SiMacos />
+        <SiVisualstudiocode color="#000"/>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiVisualstudiocode />
+        <SiVercel color="#000"/>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiPostman />
+        <SiGithub  color="#000"/>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiSlack />
+        <SiThreedotjs  color="#000"/>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiVercel />
+        <SiFigma  color="#000"/>
       </Col>
+      
     </Row>
   );
 }
