@@ -273,12 +273,12 @@ button:focus {
 }
 
 .heading {
-  font-size: 2.4em !important;
+  font-size: 2.4em;
   padding-left: 50px !important;
 }
 
 .heading-name {
-  font-size: 2.5em !important;
+  font-size: 2.5em;
   padding-left: 45px !important;
   color: #000;
 }
@@ -286,6 +286,13 @@ button:focus {
 .main-name {
   color: #cd5ff8;
 }
+
+@media (max-width: 768px) {
+  .main-name, .heading, .heading-name {
+    font-size: 30px;
+  }
+}
+
 
 .Typewriter__wrapper {
   font-size: 2.2em !important;
@@ -400,6 +407,7 @@ button:focus {
 .icon-colour {
   color: #700c86 !important;
 }
+
 
 /* --------- */
 /* Footer */
