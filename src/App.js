@@ -18,31 +18,51 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  const [load, upadateLoad] = useState(true);
+  const [load, updateLoad] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
 
+  // For preloader
   useEffect(() => {
     const timer = setTimeout(() => {
-      upadateLoad(false);
+      updateLoad(false);
     }, 1200);
-
     return () => clearTimeout(timer);
   }, []);
 
+  // Detect screen width
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile(); // Initial check
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   return (
-    <Router>
-      <div className="App" id={load ? "no-scroll" : "scroll"}>
+    <div className="App" id={load ? "no-scroll" : "scroll"}>
+      <Router>
         <Navbar />
         <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/project" element={<Projects />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="*" element={<Navigate to="/"/>} />
-        </Routes>
+
+        {isMobile ? (
+          <>
+            <Home />
+            <About />
+            <Projects />
+            <Resume />
+          </>
+        ) : (
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/project" element={<Projects />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+        )}
+
         <Footer />
-      </div>
-    </Router>
+      </Router>
+    </div>
   );
 }
 
