@@ -66,7 +66,7 @@ function NavBar() {
               {renderNavLink("Projects", <AiOutlineFundProjectionScreen style={{ marginBottom: "2px" }} />, "projects")}
             </Nav.Item>
             <Nav.Item>
-              {renderNavLink("Resume", <CgFileDocument style={{ marginBottom: "2px" }} />, "resume-wrapper")}
+              {renderNavLink("Resume", <CgFileDocument style={{ marginBottom: "2px" }} />, "my-cv")}
             </Nav.Item>
             <Nav.Item className="fork-btn">
               <Button

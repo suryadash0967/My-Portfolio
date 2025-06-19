@@ -17,7 +17,7 @@ function ResumeNew() {
 
   return (
     <div>
-      <Container fluid className="resume-section" id="resume-wrapper">
+      <Container fluid className="resume-section" id="my-cv">
         {/* <Particle /> */}
         <Row style={{ justifyContent: "center", position: "relative" }}>
           <Button
